@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const https = require('https');
@@ -28,12 +29,12 @@ app.post("/",function(req,res){
   };
   const jsonData = JSON.stringify(data);
 
-  //const api_key = "08f1097cbf6a926554d16bd26293e41f-us10";
-  //const list_id = "d01a5b0dad";
-  const url = "https://us10.api.mailchimp.com/3.0/lists/d01a5b0dad";
+  const api_key = process.env.API;
+  const list_id = process.env.LIST;
+  const url = "https://us10.api.mailchimp.com/3.0/lists/"+list_id;
   const options = {
     method : "POST",
-    auth : "abhijeet:3c1f16e8f3b20366dad54cad508f45df-us10"
+    auth : "abhijeet:"+api_key
   };
   const request = https.request(url,options,function(response){
     var statusCode = response.statusCode;
@@ -44,7 +45,7 @@ app.post("/",function(req,res){
       res.sendFile(__dirname+"/failure.html");
     }
     response.on("data",function(data){
-      // console.log(JSON.parse(data));
+      console.log(JSON.parse(data));
     });
   });
   request.write(jsonData);
