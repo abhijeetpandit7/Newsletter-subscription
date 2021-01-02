@@ -2,17 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Failure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="description" content="Subscribe to my newsletter">
+    <meta name="author" content="Abhijeet Pandit">
+    <title>Try again!</title>
+    <link rel="icon" href="image/newsletter.png">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-  <div class="jumbotron">
-    <h1 class="display-4">Uh Oh!</h1>
-    <p class="lead">There might be some problem on our side. Please try again later.</p>
-    <form action="/failure" method="post">
-      <button class="btn btn-warning btn-lg" type="submit" name="button">Try again</button>
-    </form>
-  </div>
+    <div class="jumbotron centered">
+      <h1 class="display-4">Uh Oh!</h1>
+      <p class="lead">Looks like there was some problem on our side. Please try again later.</p>
+      <form action="/failure" method="post">
+        <button class="btn btn-warning btn-lg" type="submit" name="button">Try again</button>
+      </form>
+    </div>
   </body>
 </html>

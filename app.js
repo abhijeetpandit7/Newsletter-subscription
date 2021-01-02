@@ -4,7 +4,6 @@ const https = require('https');
 const app = express();
 
 app.use(express.static("public"));
-
 app.use(bodyParser.urlencoded({extended : true}));
 
 app.get("/",function(req,res){
@@ -15,7 +14,6 @@ app.post("/",function(req,res){
   var firstName = req.body.fname;
   var lastName = req.body.lname;
   var email = req.body.email;
-
   const data = {
     members : [
       {
@@ -35,7 +33,7 @@ app.post("/",function(req,res){
   const url = "https://us10.api.mailchimp.com/3.0/lists/d01a5b0dad";
   const options = {
     method : "POST",
-    auth : "abhijeet:08f1097cbf6a926554d16bd26293e41f-us10"
+    auth : "abhijeet:3c1f16e8f3b20366dad54cad508f45df-us10"
   };
   const request = https.request(url,options,function(response){
     var statusCode = response.statusCode;
@@ -46,7 +44,7 @@ app.post("/",function(req,res){
       res.sendFile(__dirname+"/failure.html");
     }
     response.on("data",function(data){
-      console.log(JSON.parse(data));
+      // console.log(JSON.parse(data));
     });
   });
   request.write(jsonData);
@@ -60,6 +58,3 @@ app.post("/failure",function(req,res){
 app.listen(process.env.PORT || 3000,function(){
   console.log("Server started");
 });
-
-//API Key
-//

@@ -1,5 +1,5 @@
 {
-  "name": "newsletter-signup",
+  "name": "newsletter-subscription",
   "version": "1.0.0",
   "description": "This is a News-letter signup",
   "main": "app.js",
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "request": "^2.88.2"
   }
